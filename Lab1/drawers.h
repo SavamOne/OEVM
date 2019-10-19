@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void draw_menu(short index, data_types* dtf, short size);
+void draw_menu(short index, data_types& dtf);
 void draw_bits(bool* bits, short size, short start, short end, char mode, short step = 0);
 
 void draw_choose_menu(short index);

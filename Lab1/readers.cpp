@@ -3,23 +3,23 @@
 using namespace std;
 
 
-short choose_data_type(data_types* dtf, short size){
+short choose_data_type(data_types& dtf){
 	short index = 0;
 	char move;
-	draw_menu(index, dtf, size);
+	draw_menu(index, dtf);
 	do 
 	{
 		move = _getch();
 
-		if (move == 80 && index < size - 1)
+		if (move == 80 && index < dtf.size - 1)
 		{
 			index++;
-			draw_menu(index, dtf, size);
+			draw_menu(index, dtf);
 		}
 		else if (move == 72 && index >0)
 		{
 			index--;
-			draw_menu(index, dtf, size);
+			draw_menu(index, dtf);
 		}
 
 	} while (move != 13);

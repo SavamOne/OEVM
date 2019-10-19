@@ -12,7 +12,7 @@
 using namespace std;
 
 
-short choose_data_type(data_types* dtf, short size);
+short choose_data_type(data_types& dtf);
 int choose_number_system();
 string read_value(const int& ns, bool _signed);
 

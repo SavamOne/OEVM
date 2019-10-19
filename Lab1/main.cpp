@@ -6,7 +6,7 @@ using namespace std;
 
 void main_acitivity()
 {
-	short dt_index = choose_data_type(dtf, dtf_size);
+	short dt_index = choose_data_type(dtf);
 	dtf[dt_index].processing();
 }
 
@@ -38,6 +38,7 @@ void choose_bit2_color()
 
 int main()
 {
+	dtf_init();
 	set_bg_color(bg_color);
 
 	while (true)

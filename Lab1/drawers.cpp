@@ -38,11 +38,11 @@ void draw_bits(bool* bits, short size, short start, short end, char mode, short 
 	}
 }
 
-void draw_menu(short index, data_types* dtf, short size)
+void draw_menu(short index, data_types& dtf)
 {
 	system("cls");
 	cout << "Please, choose data type, which you want to use:" << endl;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < dtf.size; i++)
 	{
 		cout << (i == index ? "-> " : "   ") << dtf[i].data_type_name << endl;
 	}
