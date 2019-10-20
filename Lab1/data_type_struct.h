@@ -5,23 +5,13 @@
 
 using namespace std;
 
-class data_types
+struct data_type
 {
-	struct data_type
-	{
-		string data_type_name;
-		void(*processing)();
-	};
+	string data_type_name;
+	void(*processing)();
 
-	data_type* arr;
-	int arr_size;
-	void reallocate(int how);
-
-public:
-	int size;
-	data_types();
-	void append(string data_type_name, void(* const func)());
-	data_type& operator[] (int index);
-	~data_types();
+	data_type(string data_type_name, void(*func)());
+	data_type() = default;
 };
+
 #endif //DATA_TYPE_STRUCT_H

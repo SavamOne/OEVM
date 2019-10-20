@@ -3,10 +3,10 @@
 using namespace std;
 
 
-short choose_data_type(data_types& dtf){
+short choose_data_type(){
 	short index = 0;
 	char move;
-	draw_menu(index, dtf);
+	draw_menu(index);
 	do 
 	{
 		move = _getch();
@@ -14,12 +14,12 @@ short choose_data_type(data_types& dtf){
 		if (move == 80 && index < dtf.size - 1)
 		{
 			index++;
-			draw_menu(index, dtf);
+			draw_menu(index);
 		}
 		else if (move == 72 && index >0)
 		{
 			index--;
-			draw_menu(index, dtf);
+			draw_menu(index);
 		}
 
 	} while (move != 13);
@@ -40,7 +40,7 @@ int choose_number_system()
 	{
 		cout << "Number system must be in [2;" << symb2digit('z') + 1 << "]. Try again" << endl;
 		cin.clear();
-		//cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 		cin >> number;
 	}
@@ -175,49 +175,44 @@ short choose_action()
 	return index;
 }
 
-colors choose_color(colors* clrs, short size, colors& second_color)
+colors choose_color()
 {
-	colors* clrs_n = new colors[size - 4];
-	int count = 0;
-	for (int i = 0; i < size; i++)
+	container<colors>* clrs_n = new container<colors>();
+	for (int i = 0; i < cs.size; i++)
 	{
-		if (clrs[i].color_id != text_color.color_id 
-		 && clrs[i].color_id != bit1_color.color_id 
-	     && clrs[i].color_id != bit2_color.color_id 
-		 && clrs[i].color_id != bg_color.color_id)
+		if (cs[i].color_id != text_color.color_id
+		 && cs[i].color_id != bit1_color.color_id
+	     && cs[i].color_id != bit2_color.color_id
+		 && cs[i].color_id != bg_color.color_id)
 		{
-			clrs_n[count] = clrs[i];
-			count++;
+			clrs_n->append(cs[i]);
 		}
 	}
 
 	short index = 0;
-	//if (clrs[index].color_id == second_color.color_id) index++;
 	char move;
-	draw_colors(index, clrs_n, count, second_color);
+	draw_colors(index, *clrs_n);
 	do
 	{
 		move = _getch();
 
-		if (move == 80 && index < count - 1)
+		if (move == 80 && index < clrs_n->size - 1)
 		{
 			index++;
-			//if (clrs[index].color_id == second_color.color_id) index++;
-			draw_colors(index, clrs_n, count, second_color);
+			draw_colors(index, *clrs_n);
 		}
 		else if (move == 72 && index > 0)
 		{
 			index--;
-			//if (clrs[index].color_id == second_color.color_id) index--;
-			draw_colors(index, clrs_n, count, second_color);
+			draw_colors(index, *clrs_n);
 		}
 
 	} while (move != 13 && move != 27);
 	system("cls");
 	set_bg_color(bg_color);
-	cout << "You choosed: " << clrs_n[index].color_name << endl;
+	cout << "You choosed: " << (*clrs_n)[index].color_name << endl;
 	
-	colors ret = clrs_n[index];
-	delete[] clrs_n;
+	colors ret = (*clrs_n)[index];
+	delete clrs_n;
 	return ret;
 }

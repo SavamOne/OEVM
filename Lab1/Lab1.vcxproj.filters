@@ -15,19 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\OEVM\Lab1\converter.h">
+    <ClInclude Include="byte_union.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OEVM\Lab1\data_type_struct.h">
+    <ClInclude Include="change_colors.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OEVM\Lab1\pseudo_record_in_memory.h">
+    <ClInclude Include="color_struct.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OEVM\Lab1\readers.h">
+    <ClInclude Include="config.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OEVM\Lab1\symb2digit.h">
+    <ClInclude Include="container.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="converter.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="cycling_shift.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="data_type_struct.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="drawers.h">
@@ -36,48 +45,42 @@
     <ClInclude Include="processing.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="cycling_shift.h">
+    <ClInclude Include="pseudo_record_in_memory.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="byte_union.h">
+    <ClInclude Include="readers.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="colors_config.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="color_struct.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="data_types_config.h">
+    <ClInclude Include="symb2digit.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\OEVM\Lab1\data_type_struct.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\OEVM\Lab1\main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\OEVM\Lab1\readers.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\OEVM\Lab1\symb2digit.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="drawers.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="processing.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="data_types_config.cpp">
+    <ClCompile Include="change_colors.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="color_struct.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="colors_config.cpp">
+    <ClCompile Include="config.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="data_type_struct.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="drawers.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="processing.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="readers.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="symb2digit.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

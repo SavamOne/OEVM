@@ -38,7 +38,7 @@ void draw_bits(bool* bits, short size, short start, short end, char mode, short 
 	}
 }
 
-void draw_menu(short index, data_types& dtf)
+void draw_menu(short index)
 {
 	system("cls");
 	cout << "Please, choose data type, which you want to use:" << endl;
@@ -58,17 +58,14 @@ void draw_choose_menu(short index)
 	}
 }
 
-void draw_colors(short index, colors* clrs, short size, colors& bg_color)
+void draw_colors(short index, container<colors>& clrs)
 {
 	system("cls");
 	set_text_color(text_color);
 	cout << "Please, choose new color, which you want to use:" << endl;
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < clrs.size; i++)
 	{
-		//if (clrs[i].color_id != bg_color.color_id)
-		//{
-			set_text_color(clrs[i]);
-			cout << (i == index ? "-> " : "   ") << clrs[i].color_name << endl;
-		//}
+		set_text_color(clrs[i]);
+		cout << (i == index ? "-> " : "   ") << clrs[i].color_name << endl;
 	}
 }
