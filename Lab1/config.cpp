@@ -2,6 +2,8 @@
 
 container<colors> cs;
 container<data_type> dtf;
+container<action> actions;
+
 colors text_color, bit1_color, bit2_color, bg_color;
 
 void init_dtf()
@@ -43,4 +45,13 @@ void init_colors()
 	bit1_color = cs[9];
 	bit2_color = cs[5];
 	bg_color = cs[0];
+}
+
+void init_actions()
+{
+	actions.append(action("Start the program",  main_acitivity));
+	actions.append(action("Choose text color",  choose_text_color));
+	actions.append(action("Choose background color", choose_bg_color));
+	actions.append(action("Choose bit first color", choose_bit1_color));
+	actions.append(action("Choose bit second color", choose_bit2_color));
 }

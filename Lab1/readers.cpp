@@ -1,12 +1,13 @@
 #include "readers.h"
 
 using namespace std;
+using namespace readers;
 
 
-short choose_data_type(){
+short readers::choose_data_type(){
 	short index = 0;
 	char move;
-	draw_menu(index);
+	drawers::draw_menu(index);
 	do 
 	{
 		move = _getch();
@@ -14,12 +15,12 @@ short choose_data_type(){
 		if (move == 80 && index < dtf.size - 1)
 		{
 			index++;
-			draw_menu(index);
+			drawers::draw_menu(index);
 		}
 		else if (move == 72 && index >0)
 		{
 			index--;
-			draw_menu(index);
+			drawers::draw_menu(index);
 		}
 
 	} while (move != 13);
@@ -30,7 +31,7 @@ short choose_data_type(){
 	return index;
 }
 
-int choose_number_system()
+int readers::choose_number_system()
 {
 	cout << "Enter number system" << endl;
 	cout << "Number system must be in [2;" << symb2digit('z') + 1 << "]" << endl;
@@ -40,14 +41,13 @@ int choose_number_system()
 	{
 		cout << "Number system must be in [2;" << symb2digit('z') + 1 << "]. Try again" << endl;
 		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
+		//cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cin >> number;
 	}
     return number;
 }
 
-string read_value(const int& ns, bool _signed)
+string readers::read_value(const int& ns, bool _signed)
 {
 	cout << "Enter number" << endl << "You can use: .+-";
 	for(short i = 0; i < ns; i++)
@@ -55,7 +55,6 @@ string read_value(const int& ns, bool _signed)
 		cout << digit2symb(i);
 	}
 	cout << endl;
-
 
 	char digit_char;
 	string number = "";
@@ -66,7 +65,13 @@ string read_value(const int& ns, bool _signed)
 	while (digit_char != 13)
 	{
 		int digit_int = symb2digit(digit_char);
-		if (digit_int < ns && (digit_int != -1 || (digit_char == '-' && _signed && number.size()== 0) || (digit_char == '+' && _signed && number.size()== 0) || (digit_char == '.' && !dot_placed)))
+		if (digit_int < ns && 
+			(
+				 digit_int != -1 || 
+				(digit_char == '-' && _signed && number.size()== 0) || 
+				(digit_char == '+' && _signed && number.size()== 0) || 
+				(digit_char == '.' && !dot_placed)
+			))
 		{
 			if(digit_char == '.' && !dot_placed) dot_placed = true;
             cout << digit_char;
@@ -84,7 +89,7 @@ string read_value(const int& ns, bool _signed)
 	return number;
 }
 
-short choose_shift()
+short readers::choose_shift()
 {
 	cout << "Enter how many bits to shift" << endl;
 	short res;
@@ -99,7 +104,7 @@ short choose_shift()
 	return res;
 }
 
-bool choose_direction()
+bool readers::choose_direction()
 {
 	cout << "Choose shift direction. Press <- or ->" << endl;
 	char dir = _getch();
@@ -110,34 +115,34 @@ bool choose_direction()
 	return dir == 77 ? 1 : 0;
 }
 
-short* choose_bits(bool* bits, short size)
+short* readers::choose_bits(bool* bits, short size)
 {
 	short start = 0, end = 7;
 	
 	char move;
-	draw_bits(bits, size, start, end, 'd');
+	drawers::draw_bits(bits, size, start, end, 'd');
 	do
 	{
 		move = _getch();
 		if (move == 77 && end < size - 1)
 		{
 			start++; end++;
-			draw_bits(bits, size, start, end, 'd');
+			drawers::draw_bits(bits, size, start, end, 'd');
 		}
 		else if (move == 75 && start > 0)
 		{
 			start--; end--;
-			draw_bits(bits, size, start, end, 'd');
+			drawers::draw_bits(bits, size, start, end, 'd');
 		}
 		else if (move == 72 && end < size -1)
 		{
 			end++;
-			draw_bits(bits, size, start, end, 'd');
+			drawers::draw_bits(bits, size, start, end, 'd');
 		}
 		else if (move == 80 && end > start +1)
 		{
 			end--;
-			draw_bits(bits, size, start, end, 'd');
+			drawers::draw_bits(bits, size, start, end, 'd');
 		}
 
 	} while (move != 13);
@@ -149,24 +154,24 @@ short* choose_bits(bool* bits, short size)
 	return params;
 }
 
-short choose_action()
+short readers::choose_action()
 {
 	short index = 0;
 	char move;
-	draw_choose_menu(index);
+	drawers::draw_choose_menu(index);
 	do
 	{
 		move = _getch();
 
-		if (move == 80 && index < 5 - 1)
+		if (move == 80 && index < actions.size - 1)
 		{
 			index++;
-			draw_choose_menu(index);
+			drawers::draw_choose_menu(index);
 		}
 		else if (move == 72 && index > 0)
 		{
 			index--;
-			draw_choose_menu(index);
+			drawers::draw_choose_menu(index);
 		}
 
 	} while (move != 13);
@@ -175,7 +180,7 @@ short choose_action()
 	return index;
 }
 
-colors choose_color()
+colors readers::choose_color()
 {
 	container<colors>* clrs_n = new container<colors>();
 	for (int i = 0; i < cs.size; i++)
@@ -191,7 +196,7 @@ colors choose_color()
 
 	short index = 0;
 	char move;
-	draw_colors(index, *clrs_n);
+	drawers::draw_colors(index, *clrs_n);
 	do
 	{
 		move = _getch();
@@ -199,12 +204,12 @@ colors choose_color()
 		if (move == 80 && index < clrs_n->size - 1)
 		{
 			index++;
-			draw_colors(index, *clrs_n);
+			drawers::draw_colors(index, *clrs_n);
 		}
 		else if (move == 72 && index > 0)
 		{
 			index--;
-			draw_colors(index, *clrs_n);
+			drawers::draw_colors(index, *clrs_n);
 		}
 
 	} while (move != 13 && move != 27);

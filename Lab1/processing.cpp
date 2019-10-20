@@ -8,11 +8,17 @@ void processing_char()
 
 	bool* bits = pseudo_record_in_memory(symbol);
 
-	draw_bits(bits, 8, -1, -1, 's');
+	drawers::draw_bits(bits, 8, -1, -1, 's');
 
-	cout << "--------" << endl << "Press Enter to continue" << endl;
-	while (_getch() != 13) {};
+	if (symbol != 0)
+	{
+		char res;
+		cout << "--------" << endl << "Press Enter to continue or ESC to finish" << endl;
+		res = _getch();
+		while (res != 13 && res != 27) { res = _getch(); };
 
-	processing_shift(bits, symbol);
+		if (res == 13)
+			processing_shift(bits, symbol);
+	}
 	delete[] bits;
 }

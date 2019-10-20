@@ -3,14 +3,12 @@
 
 #include <string>
 
-using namespace std;
-
 struct data_type
 {
-	string data_type_name;
+	std::string data_type_name;
 	void(*processing)();
 
-	data_type(string data_type_name, void(*func)());
+	data_type(std::string data_type_name, void(*func)());
 	data_type() = default;
 };
 
