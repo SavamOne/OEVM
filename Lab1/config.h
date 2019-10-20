@@ -3,7 +3,7 @@
 #include "Structures/action_struct.h"
 #include "Structures/container.h"
 
-#include "MainLogic/processing.h"
+#include "processing.h"
 #include "actions.h"
 
 void init_dtf();

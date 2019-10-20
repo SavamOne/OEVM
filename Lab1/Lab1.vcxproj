@@ -66,9 +66,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="actions.h" />
+    <ClInclude Include="VeryImportantFuncs/console_handler.h" />
     <ClInclude Include="Structures/action_struct.h" />
     <ClInclude Include="Structures/byte_union.h" />
-    <ClInclude Include="VeryImportantFuncs/change_colors.h" />
     <ClInclude Include="Structures/color_struct.h" />
     <ClInclude Include="config.h" />
     <ClInclude Include="Structures/container.h" />
@@ -76,21 +76,21 @@
     <ClInclude Include="MainLogic/cycling_shift.h" />
     <ClInclude Include="Structures/data_type_struct.h" />
     <ClInclude Include="Input/drawers.h" />
-    <ClInclude Include="MainLogic/processing.h" />
+    <ClInclude Include="processing.h" />
     <ClInclude Include="MainLogic/pseudo_record_in_memory.h" />
     <ClInclude Include="Input/readers.h" />
     <ClInclude Include="VeryImportantFuncs/symb2digit.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions.cpp" />
+    <ClCompile Include="VeryImportantFuncs/console_handler.cpp" />
     <ClCompile Include="Structures/action_struct.cpp" />
-    <ClCompile Include="VeryImportantFuncs/change_colors.cpp" />
     <ClCompile Include="Structures/color_struct.cpp" />
     <ClCompile Include="config.cpp" />
     <ClCompile Include="Structures/data_type_struct.cpp" />
     <ClCompile Include="Input/drawers.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MainLogic/processing.cpp" />
+    <ClCompile Include="processing.cpp" />
     <ClCompile Include="Input/readers.cpp" />
     <ClCompile Include="VeryImportantFuncs/symb2digit.cpp" />
   </ItemGroup>

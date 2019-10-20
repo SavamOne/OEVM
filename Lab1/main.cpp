@@ -1,12 +1,14 @@
 #include "config.h"
 
+using namespace std;
+
 int main()
 {
-	init_dtf();
+ 	init_dtf();
 	init_colors();
 	init_actions();
 
-	set_bg_color(bg_color);
+	console_handler::set_bg_color(bg_color);
 
 	while (true)
 	{

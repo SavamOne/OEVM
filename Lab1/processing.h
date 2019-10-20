@@ -1,10 +1,10 @@
 #pragma once
 
-#include "pseudo_record_in_memory.h"
-#include "cycling_shift.h"
-#include "converter.h"
+#include "MainLogic/pseudo_record_in_memory.h"
+#include "MainLogic/cycling_shift.h"
+#include "MainLogic/converter.h"
 
-#include "../Input/readers.h"
+#include "Input/readers.h"
 
 template <class T>
 void processing_shift(bool* bits, T a)
@@ -17,15 +17,20 @@ void processing_shift(bool* bits, T a)
 		step = params[1] - params[0] - step + 1;
 	system("cls");
 
+	//handle_console_worker worker;
+
 	cout << "Old value:" << endl;
 	drawers::draw_bits(bits, sizeof(T) * 8, params[0], params[1], 'o', step);
+	//worker.bits_ticker(bits, sizeof(T) * 8);
 	cout << "Old number in decimal number system: " << fixed << a << endl;
+	drawers::draw_graphic(bits, sizeof(T) * 8, 20, 20, 80);
 
 	T new_a = cyclic_shift<T>(bits, params[0], params[1], step);
 
 	cout << "New value:" << endl;
 	drawers::draw_bits(bits, sizeof(T) * 8, params[0], params[1], 'n', step);
 	cout << "New number in decimal number system: " << fixed << new_a << endl;
+	drawers::draw_graphic(bits, sizeof(T) * 8, 20, 20, 80 + 40 + 80);
 
 	delete[] params;
 }

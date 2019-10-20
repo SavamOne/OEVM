@@ -1,8 +1,6 @@
 #include "readers.h"
 
 using namespace std;
-using namespace readers;
-
 
 short readers::choose_data_type(){
 	short index = 0;
@@ -214,7 +212,7 @@ color readers::choose_color()
 
 	} while (move != 13 && move != 27);
 	system("cls");
-	set_bg_color(bg_color);
+	console_handler::set_bg_color(bg_color);
 	cout << "You choosed: " << (*clrs_n)[index].color_name << endl;
 	
 	color ret = (*clrs_n)[index];

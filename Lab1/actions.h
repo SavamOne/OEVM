@@ -1,6 +1,6 @@
 #pragma once
 #include "Input/readers.h"
-#include "VeryImportantFuncs/change_colors.h"
+#include "VeryImportantFuncs/console_handler.h"
 
 extern container<data_type> dtf;
 

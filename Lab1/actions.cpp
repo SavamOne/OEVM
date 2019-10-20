@@ -9,13 +9,13 @@ void main_acitivity()
 void choose_text_color()
 {
 	text_color = readers::choose_color();
-	set_text_color(text_color);
+	console_handler::set_text_color(text_color);
 }
 
 void choose_bg_color()
 {
 	color c = readers::choose_color();
-	set_bg_color(c);
+	console_handler::set_bg_color(c);
 }
 
 void choose_bit1_color()
