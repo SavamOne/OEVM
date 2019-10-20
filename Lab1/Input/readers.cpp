@@ -12,14 +12,14 @@ short readers::choose_data_type(){
 	{
 		move = _getch();
 
-		if (move == 80 && index < dtf.size - 1)
+		if (move == 80)
 		{
-			index++;
+			index= ++index % dtf.size;
 			drawers::draw_menu(index);
 		}
-		else if (move == 72 && index >0)
+		else if (move == 72)
 		{
-			index--;
+			index = (index > 0 ? --index : dtf.size - 1);
 			drawers::draw_menu(index);
 		}
 
@@ -163,14 +163,14 @@ short readers::choose_action()
 	{
 		move = _getch();
 
-		if (move == 80 && index < actions.size - 1)
+		if (move == 80)
 		{
-			index++;
+			index = ++index % actions.size;
 			drawers::draw_choose_menu(index);
 		}
-		else if (move == 72 && index > 0)
+		else if (move == 72)// && index > 0)
 		{
-			index--;
+			index = (index > 0 ? --index : actions.size -1);
 			drawers::draw_choose_menu(index);
 		}
 
@@ -180,9 +180,9 @@ short readers::choose_action()
 	return index;
 }
 
-colors readers::choose_color()
+color readers::choose_color()
 {
-	container<colors>* clrs_n = new container<colors>();
+	container<color>* clrs_n = new container<color>();
 	for (int i = 0; i < cs.size; i++)
 	{
 		if (cs[i].color_id != text_color.color_id
@@ -201,14 +201,14 @@ colors readers::choose_color()
 	{
 		move = _getch();
 
-		if (move == 80 && index < clrs_n->size - 1)
+		if (move == 80)
 		{
-			index++;
+			index = ++index % clrs_n->size;
 			drawers::draw_colors(index, *clrs_n);
 		}
-		else if (move == 72 && index > 0)
+		else if (move == 72)
 		{
-			index--;
+			index = (index > 0 ? --index : clrs_n->size - 1);
 			drawers::draw_colors(index, *clrs_n);
 		}
 
@@ -217,7 +217,7 @@ colors readers::choose_color()
 	set_bg_color(bg_color);
 	cout << "You choosed: " << (*clrs_n)[index].color_name << endl;
 	
-	colors ret = (*clrs_n)[index];
+	color ret = (*clrs_n)[index];
 	delete clrs_n;
 	return ret;
 }

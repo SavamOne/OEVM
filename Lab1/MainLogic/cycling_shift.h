@@ -1,7 +1,7 @@
 #pragma once
 
-#include "byte_union.h"
-#include "symb2digit.h"
+#include "../Structures/byte_union.h"
+#include "../VeryImportantFuncs/symb2digit.h"
 
 template <class T>
 T cyclic_shift(bool* bits, short start, short end, short step)

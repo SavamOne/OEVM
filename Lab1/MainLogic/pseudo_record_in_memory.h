@@ -1,6 +1,6 @@
 #ifndef PSEUDO_RECORD_H
 #define PSEUDO_RECORD_H
-#include "byte_union.h"
+#include "../Structures/byte_union.h"
 
 template <class T>
 bool* pseudo_record_in_memory(T value)

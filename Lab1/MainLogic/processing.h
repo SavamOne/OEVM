@@ -2,9 +2,9 @@
 
 #include "pseudo_record_in_memory.h"
 #include "cycling_shift.h"
-
 #include "converter.h"
-#include "readers.h"
+
+#include "../Input/readers.h"
 
 template <class T>
 void processing_shift(bool* bits, T a)

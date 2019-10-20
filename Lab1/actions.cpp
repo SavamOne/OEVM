@@ -8,25 +8,22 @@ void main_acitivity()
 
 void choose_text_color()
 {
-	colors c = readers::choose_color();
-	text_color = c;
+	text_color = readers::choose_color();
 	set_text_color(text_color);
 }
 
 void choose_bg_color()
 {
-	colors c = readers::choose_color();
+	color c = readers::choose_color();
 	set_bg_color(c);
 }
 
 void choose_bit1_color()
 {
-	colors c = readers::choose_color();
-	bit1_color = c;
+	bit1_color = readers::choose_color();
 }
 
 void choose_bit2_color()
 {
-	colors c = readers::choose_color();
-	bit2_color = c;
+	bit2_color = readers::choose_color();
 }

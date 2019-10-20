@@ -6,12 +6,14 @@
 #include <conio.h>
 #include <limits>
 
-#include "symb2digit.h"
+#include "../VeryImportantFuncs/symb2digit.h"
 #include "drawers.h"
 
 using namespace std;
 
+extern container<action> actions;
 extern container<data_type> dtf;
+extern container<color> cs;
 
 namespace readers
 {
@@ -25,7 +27,7 @@ namespace readers
 	short* choose_bits(bool* bits, short size);
 
 	short choose_action();
-	colors choose_color();
+	color choose_color();
 }
 
 

@@ -1,8 +1,9 @@
-#include "color_struct.h"
-#include "data_type_struct.h"
-#include "action_struct.h"
-#include "container.h"
-#include "processing.h"
+#include "Structures/color_struct.h"
+#include "Structures/data_type_struct.h"
+#include "Structures/action_struct.h"
+#include "Structures/container.h"
+
+#include "MainLogic/processing.h"
 #include "actions.h"
 
 void init_dtf();

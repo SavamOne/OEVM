@@ -1,10 +1,10 @@
 #include"config.h"
 
-container<colors> cs;
+container<color> cs;
 container<data_type> dtf;
 container<action> actions;
 
-colors text_color, bit1_color, bit2_color, bg_color;
+color text_color, bit1_color, bit2_color, bg_color;
 
 void init_dtf()
 {
@@ -24,22 +24,22 @@ void init_dtf()
 
 void init_colors()
 {
-	cs.append(colors("Black", 0));
-	cs.append(colors("Blue", 1));
-	cs.append(colors("Green", 2));
-	cs.append(colors("Cyan", 3));
-	cs.append(colors("Red", 4));
-	cs.append(colors("Magenta", 5));
-	cs.append(colors("Brown", 6));
-	cs.append(colors("LightGray", 7));
-	cs.append(colors("DarkGray", 8));
-	cs.append(colors("LightBlue", 9));
-	cs.append(colors("LightGreen", 10));
-	cs.append(colors("LightCyan", 11));
-	cs.append(colors("LightRed", 12));
-	cs.append(colors("LightMagenta", 13));
-	cs.append(colors("Yellow", 14));
-	cs.append(colors("White", 15));
+	cs.append(color("Black", 0));
+	cs.append(color("Blue", 1));
+	cs.append(color("Green", 2));
+	cs.append(color("Cyan", 3));
+	cs.append(color("Red", 4));
+	cs.append(color("Magenta", 5));
+	cs.append(color("Brown", 6));
+	cs.append(color("LightGray", 7));
+	cs.append(color("DarkGray", 8));
+	cs.append(color("LightBlue", 9));
+	cs.append(color("LightGreen", 10));
+	cs.append(color("LightCyan", 11));
+	cs.append(color("LightRed", 12));
+	cs.append(color("LightMagenta", 13));
+	cs.append(color("Yellow", 14));
+	cs.append(color("White", 15));
 
 	text_color = cs[7];
 	bit1_color = cs[9];

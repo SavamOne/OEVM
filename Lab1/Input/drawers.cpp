@@ -41,12 +41,12 @@ void drawers::draw_menu(short index)
 void drawers::draw_choose_menu(short index)
 {
 	system("cls");
-	cout << "Please, what you want to do" << endl;
+	cout << "Please, choose what you want to do" << endl;
 	for (int i = 0; i < actions.size; i++)
 		cout << (i == index ? "-> " : "   ") << actions[i].action_name << endl;
 }
 
-void drawers::draw_colors(short index, container<colors>& clrs)
+void drawers::draw_colors(short index, container<color>& clrs)
 {
 	system("cls");
 	set_text_color(text_color);

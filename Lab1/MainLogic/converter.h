@@ -4,7 +4,7 @@
 #include <string>
 #include <limits>
 
-#include "symb2digit.h"
+#include "../VeryImportantFuncs/symb2digit.h"
 
 using namespace std;
 
