@@ -19,12 +19,6 @@
     <Filter Include="Файлы заголовков\Структуры">
       <UniqueIdentifier>{ae0d5129-82e8-497d-ad89-db9b740031f6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Ввод">
-      <UniqueIdentifier>{05423094-b559-4eb1-9049-bab4190dd8f6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Ввод">
-      <UniqueIdentifier>{75ff4c67-9977-42c6-81ac-4317657e5034}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Основная логика">
       <UniqueIdentifier>{fc4460bc-2057-49d7-a882-5a25416bcc90}</UniqueIdentifier>
     </Filter>
@@ -33,6 +27,12 @@
     </Filter>
     <Filter Include="Файлы заголовков\Очень нужные функции">
       <UniqueIdentifier>{e846c606-ce0f-4c97-a5bf-3b1ac25a0732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Ввод/Вывод">
+      <UniqueIdentifier>{05423094-b559-4eb1-9049-bab4190dd8f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Ввод/Вывод">
+      <UniqueIdentifier>{75ff4c67-9977-42c6-81ac-4317657e5034}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -57,12 +57,6 @@
     <ClInclude Include="Structures/byte_union.h">
       <Filter>Файлы заголовков\Структуры</Filter>
     </ClInclude>
-    <ClInclude Include="Input/drawers.h">
-      <Filter>Файлы заголовков\Ввод</Filter>
-    </ClInclude>
-    <ClInclude Include="Input/readers.h">
-      <Filter>Файлы заголовков\Ввод</Filter>
-    </ClInclude>
     <ClInclude Include="MainLogic/pseudo_record_in_memory.h">
       <Filter>Файлы заголовков\Основная логика</Filter>
     </ClInclude>
@@ -75,11 +69,32 @@
     <ClInclude Include="VeryImportantFuncs/symb2digit.h">
       <Filter>Файлы заголовков\Очень нужные функции</Filter>
     </ClInclude>
-    <ClInclude Include="processing.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="VeryImportantFuncs/console_handler.h">
       <Filter>Файлы заголовков\Очень нужные функции</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOutput/reader_value.h">
+      <Filter>Файлы заголовков\Ввод/Вывод</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOutput/reader_options.h">
+      <Filter>Файлы заголовков\Ввод/Вывод</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOutput/reader_menus.h">
+      <Filter>Файлы заголовков\Ввод/Вывод</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOutput/reader_bits.h">
+      <Filter>Файлы заголовков\Ввод/Вывод</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOutput/drawer_menus.h">
+      <Filter>Файлы заголовков\Ввод/Вывод</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOutput/drawer_graphic.h">
+      <Filter>Файлы заголовков\Ввод/Вывод</Filter>
+    </ClInclude>
+    <ClInclude Include="InputOutput/drawer_bits.h">
+      <Filter>Файлы заголовков\Ввод/Вывод</Filter>
+    </ClInclude>
+    <ClInclude Include="processing.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -101,12 +116,6 @@
     <ClCompile Include="Structures/data_type_struct.cpp">
       <Filter>Исходные файлы\Структуры</Filter>
     </ClCompile>
-    <ClCompile Include="Input/drawers.cpp">
-      <Filter>Исходные файлы\Ввод</Filter>
-    </ClCompile>
-    <ClCompile Include="Input/readers.cpp">
-      <Filter>Исходные файлы\Ввод</Filter>
-    </ClCompile>
     <ClCompile Include="VeryImportantFuncs/symb2digit.cpp">
       <Filter>Исходные файлы\Очень нужные функции</Filter>
     </ClCompile>
@@ -115,6 +124,27 @@
     </ClCompile>
     <ClCompile Include="VeryImportantFuncs/console_handler.cpp">
       <Filter>Исходные файлы\Очень нужные функции</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOutput/drawer_bits.cpp">
+      <Filter>Исходные файлы\Ввод/Вывод</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOutput/drawer_graphic.cpp">
+      <Filter>Исходные файлы\Ввод/Вывод</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOutput/drawer_menus.cpp">
+      <Filter>Исходные файлы\Ввод/Вывод</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOutput/reader_bits.cpp">
+      <Filter>Исходные файлы\Ввод/Вывод</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOutput/reader_menus.cpp">
+      <Filter>Исходные файлы\Ввод/Вывод</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOutput/reader_options.cpp">
+      <Filter>Исходные файлы\Ввод/Вывод</Filter>
+    </ClCompile>
+    <ClCompile Include="InputOutput/reader_value.cpp">
+      <Filter>Исходные файлы\Ввод/Вывод</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -6,9 +6,9 @@ void processing_char()
 	char symbol = _getch();
 	cout << symbol << endl;
 
-	bool* bits = pseudo_record_in_memory(symbol);
+	bool* bits = main_processes::pseudo_record_in_memory(symbol);
 
-	drawers::draw_bits(bits, 8, -1, -1, 's');
+	drawers::draw_bits(bits, 8);
 
 	if (symbol != 0)
 	{

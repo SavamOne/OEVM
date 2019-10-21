@@ -1,12 +1,12 @@
 #pragma once
 #include <string>
 
-struct action
+struct main_menu
 {
 	std::string action_name;
 	void(*action_func)();
 
-	action(std::string action_name, void(*action_func)());
-	action() = default;
+	main_menu(std::string action_name, void(*action_func)());
+	main_menu() = default;
 };
 

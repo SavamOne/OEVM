@@ -8,11 +8,11 @@ void console_handler::update_handle()
 	handle = GetStdHandle(STD_OUTPUT_HANDLE);
 }
 
-void console_handler::define_pen(color& c)
+void console_handler::define_pen(color* c)
 {
 	update_handle();
 	hDC = GetDC(GetConsoleWindow());
-	HPEN Pen = CreatePen(PS_SOLID, 2, RGB(123, 23, 222));
+	HPEN Pen = CreatePen(PS_SOLID, 2, RGB(c->R, c->G, c->B));
 	SelectObject(hDC, Pen);
 }
 
@@ -53,13 +53,13 @@ int console_handler::get_console_width()
 		return -1;
 }
 
-void console_handler::set_text_color(color& color)
+void console_handler::set_text_color(color* color)
 {
 	update_handle();
-	SetConsoleTextAttribute(handle, (WORD)((bg_color.color_id << 4) | color.color_id));
+	SetConsoleTextAttribute(handle, (WORD)((bg_color->color_id << 4) | color->color_id));
 }
 
-void console_handler::set_bg_color(color& color)
+void console_handler::set_bg_color(color* color)
 {
 	bg_color = color;
 	set_text_color(text_color);

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-extern color text_color, bit1_color, bit2_color, bg_color;
+extern color* text_color, *bit1_color, *bit2_color, *bg_color, *graphic_color;
 
 namespace console_handler
 {
@@ -14,7 +14,7 @@ namespace console_handler
 
 	void update_handle();
 
-	void define_pen(color& c);
+	void define_pen(color* c);
 	void set_pen_in(int x, int y);
 	void line_to(int x, int y);
 
@@ -22,7 +22,7 @@ namespace console_handler
 	void set_cursor_position(int x, int y);
 	int get_console_width();
 
-	void set_text_color(color& color);
-	void set_bg_color(color& color);	
+	void set_text_color(color* color);
+	void set_bg_color(color* color);	
 }
 

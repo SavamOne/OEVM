@@ -8,22 +8,38 @@ void main_acitivity()
 
 void choose_text_color()
 {
-	text_color = readers::choose_color();
-	console_handler::set_text_color(text_color);
+	color* c = readers::choose_color();
+	if (c)
+	{
+		text_color = c;
+		console_handler::set_text_color(text_color);
+	}
 }
 
 void choose_bg_color()
 {
-	color c = readers::choose_color();
-	console_handler::set_bg_color(c);
+	color* c = readers::choose_color();
+	if(c)
+		console_handler::set_bg_color(c);
 }
 
 void choose_bit1_color()
 {
-	bit1_color = readers::choose_color();
+	color* c = readers::choose_color();
+	if (c)
+		bit1_color = c;
 }
 
 void choose_bit2_color()
 {
-	bit2_color = readers::choose_color();
+	color* c = readers::choose_color();
+	if (c)
+		bit2_color = c;
+}
+
+void choose_graphic_color()
+{
+	color* c = readers::choose_color();
+	if (c)
+		graphic_color = c;
 }

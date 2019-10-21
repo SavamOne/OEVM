@@ -66,6 +66,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="actions.h" />
+    <ClInclude Include="InputOutput/drawer_bits.h" />
+    <ClInclude Include="InputOutput/drawer_graphic.h" />
+    <ClInclude Include="InputOutput/reader_bits.h" />
+    <ClInclude Include="InputOutput/reader_menus.h" />
+    <ClInclude Include="InputOutput/reader_value.h" />
     <ClInclude Include="VeryImportantFuncs/console_handler.h" />
     <ClInclude Include="Structures/action_struct.h" />
     <ClInclude Include="Structures/byte_union.h" />
@@ -75,23 +80,28 @@
     <ClInclude Include="MainLogic/converter.h" />
     <ClInclude Include="MainLogic/cycling_shift.h" />
     <ClInclude Include="Structures/data_type_struct.h" />
-    <ClInclude Include="Input/drawers.h" />
+    <ClInclude Include="InputOutput/drawer_menus.h" />
     <ClInclude Include="processing.h" />
     <ClInclude Include="MainLogic/pseudo_record_in_memory.h" />
-    <ClInclude Include="Input/readers.h" />
+    <ClInclude Include="InputOutput/reader_options.h" />
     <ClInclude Include="VeryImportantFuncs/symb2digit.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions.cpp" />
+    <ClCompile Include="InputOutput/drawer_bits.cpp" />
+    <ClCompile Include="InputOutput/drawer_graphic.cpp" />
+    <ClCompile Include="InputOutput/reader_bits.cpp" />
+    <ClCompile Include="InputOutput/reader_menus.cpp" />
+    <ClCompile Include="InputOutput/reader_value.cpp" />
     <ClCompile Include="VeryImportantFuncs/console_handler.cpp" />
     <ClCompile Include="Structures/action_struct.cpp" />
     <ClCompile Include="Structures/color_struct.cpp" />
     <ClCompile Include="config.cpp" />
     <ClCompile Include="Structures/data_type_struct.cpp" />
-    <ClCompile Include="Input/drawers.cpp" />
+    <ClCompile Include="InputOutput/drawer_menus.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="processing.cpp" />
-    <ClCompile Include="Input/readers.cpp" />
+    <ClCompile Include="InputOutput/reader_options.cpp" />
     <ClCompile Include="VeryImportantFuncs/symb2digit.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

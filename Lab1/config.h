@@ -8,5 +8,5 @@
 
 void init_dtf();
 void init_colors();
-void init_actions();
+void init_main_menu();
 

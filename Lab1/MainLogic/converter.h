@@ -8,7 +8,7 @@
 
 using namespace std;
 
-namespace converter
+namespace main_processes
 {
 	namespace
 	{

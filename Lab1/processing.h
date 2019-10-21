@@ -4,7 +4,13 @@
 #include "MainLogic/cycling_shift.h"
 #include "MainLogic/converter.h"
 
-#include "Input/readers.h"
+#include "InputOutput/reader_options.h"
+
+#include "InputOutput/reader_menus.h"
+#include "InputOutput/reader_value.h"
+#include "InputOutput/reader_bits.h"
+
+#include "InputOutput/drawer_graphic.h"
 
 template <class T>
 void processing_shift(bool* bits, T a)
@@ -17,20 +23,17 @@ void processing_shift(bool* bits, T a)
 		step = params[1] - params[0] - step + 1;
 	system("cls");
 
-	//handle_console_worker worker;
-
 	cout << "Old value:" << endl;
-	drawers::draw_bits(bits, sizeof(T) * 8, params[0], params[1], 'o', step);
-	//worker.bits_ticker(bits, sizeof(T) * 8);
+	drawers::draw_bits_ticker(bits, sizeof(T) * 8, 'o', params[0], params[1], step);
 	cout << "Old number in decimal number system: " << fixed << a << endl;
-	drawers::draw_graphic(bits, sizeof(T) * 8, 20, 20, 80);
+	drawers::draw_graphic(bits, sizeof(T) * 8);
 
-	T new_a = cyclic_shift<T>(bits, params[0], params[1], step);
+	T new_a = main_processes::cyclic_shift<T>(bits, params[0], params[1], step);
 
 	cout << "New value:" << endl;
-	drawers::draw_bits(bits, sizeof(T) * 8, params[0], params[1], 'n', step);
+	drawers::draw_bits_ticker(bits, sizeof(T) * 8, 'n', params[0], params[1], step);
 	cout << "New number in decimal number system: " << fixed << new_a << endl;
-	drawers::draw_graphic(bits, sizeof(T) * 8, 20, 20, 80 + 40 + 80);
+	drawers::draw_graphic(bits, sizeof(T) * 8);
 
 	delete[] params;
 }
@@ -46,13 +49,13 @@ void processing_number()
 	string number =			 readers::read_value(num_sys, _signed);
 
 	bool exceed_max_value;
-	T a = converter::convert2decimal<T>(number, num_sys, exceed_max_value);
-	bool* bits = pseudo_record_in_memory(a);
+	T a = main_processes::convert2decimal<T>(number, num_sys, exceed_max_value);
+	bool* bits = main_processes::pseudo_record_in_memory(a);
 
 	if(exceed_max_value) cout << "WARNING! Exceeding the maximum data type value, loss of accuracy" << endl;
 	cout << "It is in decimal number system: " << a << endl;
 
-	drawers::draw_bits(bits, sizeof(T)*8, -1, -1, 's');
+	drawers::draw_bits_ticker(bits, sizeof(T)*8);
 
 	if (a != 0)
 	{
