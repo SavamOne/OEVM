@@ -71,6 +71,7 @@
     <ClInclude Include="InputOutput/reader_bits.h" />
     <ClInclude Include="InputOutput/reader_menus.h" />
     <ClInclude Include="InputOutput/reader_value.h" />
+    <ClInclude Include="shift_processing.h" />
     <ClInclude Include="VeryImportantFuncs/console_handler.h" />
     <ClInclude Include="Structures/action_struct.h" />
     <ClInclude Include="Structures/byte_union.h" />

@@ -7,9 +7,9 @@ void drawers::draw_bit(bool bit, short i, char mode ,short start, short end, sho
 	else
 		console_handler::set_text_color(text_color);
 
-	if (mode == 'o' && i >= start && i <= start + step - 1)
+	if (mode == 'O' && i >= start && i <= start + step - 1)
 		console_handler::set_text_color(bit2_color);
-	else if (mode == 'n' && i >= end + 1 - step && i <= end)
+	else if (mode == 'N' && i >= end + 1 - step && i <= end)
 		console_handler::set_text_color(bit2_color);
 
 	if (i % 8 == 0 && i > 0)
@@ -37,9 +37,7 @@ void drawers::draw_bits_ticker(bool* bits, short size, char mode, short start, s
 		console_handler::set_text_color(text_color);
 	}
 	else
-	{
 		draw_bits(bits, size, mode, start, end, step);
-	}
 }
 
 void drawers::draw_bits(bool* bits, short size, char mode, short start, short end, short step)

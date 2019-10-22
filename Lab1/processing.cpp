@@ -18,7 +18,7 @@ void processing_char()
 		while (res != 13 && res != 27) { res = _getch(); };
 
 		if (res == 13)
-			processing_shift(bits, symbol);
+			shift_processing(bits, symbol);
 	}
 	delete[] bits;
 }
