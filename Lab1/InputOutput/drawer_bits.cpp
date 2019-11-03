@@ -30,7 +30,7 @@ void drawers::draw_bits_ticker(bool* bits, short size, char mode, short start, s
 			for (int i = 0; i < width - x - 2 - (size / 8 - 1) && i < size; i++)
 				draw_bit(bits[i], i, mode, start, end, step);
 			cout << " ";
-			Sleep(20);
+			Sleep(30);
 		}
 
 		cout << endl;

@@ -9,7 +9,7 @@ struct data_type
 	void(*processing)();
 
 	data_type(std::string data_type_name, void(*func)());
-	data_type() = default;
+	data_type(){};
 };
 
 #endif //DATA_TYPE_STRUCT_H

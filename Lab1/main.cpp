@@ -16,6 +16,7 @@ int main()
 		menu[action].action_func();
 		std::cout << "--------" << std::endl << "Press Enter to begin again" << std::endl;
 		while (_getch() != 13) {};
+		system("cls");
 	}
 	return 0;
 }

@@ -1,7 +1,9 @@
 #include "console_handler.h"
 
 HANDLE console_handler::handle;
+HWND console_handler::hWnd;
 HDC console_handler::hDC;
+HPEN console_handler::Pen;
 
 void console_handler::update_handle()
 {
@@ -11,9 +13,18 @@ void console_handler::update_handle()
 void console_handler::define_pen(color* c)
 {
 	update_handle();
-	hDC = GetDC(GetConsoleWindow());
+	hWnd = GetConsoleWindow();
+	hDC = GetDC(hWnd);
 	HPEN Pen = CreatePen(PS_SOLID, 2, RGB(c->R, c->G, c->B));
 	SelectObject(hDC, Pen);
+}
+
+void console_handler::clear_pen()
+{
+	ReleaseDC(hWnd, hDC);
+	DeleteObject(Pen);
+	//RECT rect;
+    //Rectangle(hDC,rect.left,rect.top,rect.right,rect.bottom);
 }
 
 void console_handler::set_pen_in(int x, int y)
@@ -47,10 +58,25 @@ int console_handler::get_console_width()
 {
 	update_handle();
 	CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
-	if (GetConsoleScreenBufferInfo(handle, &consoleInfo))
-		return consoleInfo.srWindow.Right - consoleInfo.srWindow.Left + 1;
-	else
-		return -1;
+	GetConsoleScreenBufferInfo(handle, &consoleInfo);
+	return consoleInfo.srWindow.Right - consoleInfo.srWindow.Left + 1;
+}
+
+float console_handler::get_scaling_parameter()
+{
+	hWnd = GetConsoleWindow();
+	HDC hDCScreen = GetDC(hWnd);
+	float a = (float)GetDeviceCaps(hDCScreen, DESKTOPVERTRES) / (float)GetDeviceCaps(hDCScreen, VERTRES);
+	ReleaseDC(hWnd, hDCScreen);
+	return a;
+}
+
+COORD console_handler::get_font_size()
+{
+	update_handle();
+	CONSOLE_FONT_INFO font_num;
+	GetCurrentConsoleFont(handle, false, &font_num);
+	return font_num.dwFontSize; //font_num.dwFontSize
 }
 
 void console_handler::set_text_color(color* color)

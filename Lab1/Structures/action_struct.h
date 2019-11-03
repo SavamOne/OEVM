@@ -7,6 +7,6 @@ struct main_menu
 	void(*action_func)();
 
 	main_menu(std::string action_name, void(*action_func)());
-	main_menu() = default;
+	main_menu(){};
 };
 

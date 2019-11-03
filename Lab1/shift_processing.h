@@ -9,8 +9,8 @@ void show_bits_and_graphic(bool* bits, T a, const char* desctiption, short start
 {
 	cout << desctiption << " value:" << endl;
 	drawers::draw_bits_ticker(bits, sizeof(T) * 8, desctiption[0], start, end, step);
-	cout << desctiption << " number in decimal number system: " << fixed << a << endl;
 	drawers::draw_graphic(bits, sizeof(T) * 8);
+	cout << desctiption << " number in decimal number system: " << fixed << a << endl;
 }
 
 template <class T>

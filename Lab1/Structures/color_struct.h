@@ -8,6 +8,7 @@ struct color
 	short R, G, B;
 
 	color(const std::string& color_name, int color_id, short R, short G, short B);
+	
+	color(){};
 
-	color() = default;
 };
