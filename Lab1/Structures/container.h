@@ -12,7 +12,7 @@ class container
 		{
 			arr_new[i] = arr[i];
 		}
-		delete[] arr;
+		if(arr != nullptr) delete[] arr;
 		arr = arr_new;
 		arr_size += how;
 	}
@@ -44,6 +44,7 @@ public:
 	~container()
 	{
 		delete[] arr;
+		arr = nullptr;
 		arr_size = size = 0;
 	}
 };

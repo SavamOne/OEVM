@@ -56,4 +56,5 @@ void init_main_menu()
 	menu.append(main_menu("Choose bit first color", choose_bit1_color));
 	menu.append(main_menu("Choose bit second color", choose_bit2_color));
 	menu.append(main_menu("Choose graphic color", choose_graphic_color));
+	menu.append(main_menu("Change authorization method", change_authorization_method));
 }

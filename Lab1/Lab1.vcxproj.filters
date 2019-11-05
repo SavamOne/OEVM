@@ -34,6 +34,12 @@
     <Filter Include="Исходные файлы\Ввод/Вывод">
       <UniqueIdentifier>{75ff4c67-9977-42c6-81ac-4317657e5034}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Авторизация">
+      <UniqueIdentifier>{7a5089a5-8af1-4c2b-862e-ea5ed2804949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Авторизация">
+      <UniqueIdentifier>{14603d42-39e4-455f-b14f-6c807b25d420}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="config.h">
@@ -99,6 +105,18 @@
     <ClInclude Include="shift_processing.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="Authorization/USB_data_struct.h">
+      <Filter>Файлы заголовков\Авторизация</Filter>
+    </ClInclude>
+    <ClInclude Include="Authorization/auth.h">
+      <Filter>Файлы заголовков\Авторизация</Filter>
+    </ClInclude>
+    <ClInclude Include="Authorization/auth_reader.h">
+      <Filter>Файлы заголовков\Авторизация</Filter>
+    </ClInclude>
+    <ClInclude Include="Authorization/get_all_drives.h">
+      <Filter>Файлы заголовков\Авторизация</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="config.cpp">
@@ -148,6 +166,18 @@
     </ClCompile>
     <ClCompile Include="InputOutput/reader_value.cpp">
       <Filter>Исходные файлы\Ввод/Вывод</Filter>
+    </ClCompile>
+    <ClCompile Include="Authorization/auth.cpp">
+      <Filter>Исходные файлы\Авторизация</Filter>
+    </ClCompile>
+    <ClCompile Include="Authorization/auth_reader.cpp">
+      <Filter>Исходные файлы\Авторизация</Filter>
+    </ClCompile>
+    <ClCompile Include="Authorization/get_all_drives.cpp">
+      <Filter>Исходные файлы\Авторизация</Filter>
+    </ClCompile>
+    <ClCompile Include="Authorization/USB_data_struct.cpp">
+      <Filter>Исходные файлы\Авторизация</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

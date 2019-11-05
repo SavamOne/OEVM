@@ -2,6 +2,7 @@
 #include "Structures/data_type_struct.h"
 #include "Structures/action_struct.h"
 #include "Structures/container.h"
+#include "Authorization/auth.h"
 
 #include "processing.h"
 #include "actions.h"

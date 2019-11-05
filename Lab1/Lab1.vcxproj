@@ -21,6 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{FCBA2FBA-7DA9-497D-B439-DF5CE9C60C29}</ProjectGuid>
+    <ProjectName>Lab1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -66,12 +67,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="actions.h" />
+    <ClInclude Include="Authorization/auth.h" />
+    <ClInclude Include="Authorization/auth_reader.h" />
+    <ClInclude Include="Authorization/get_all_drives.h" />
     <ClInclude Include="InputOutput/drawer_bits.h" />
     <ClInclude Include="InputOutput/drawer_graphic.h" />
     <ClInclude Include="InputOutput/reader_bits.h" />
     <ClInclude Include="InputOutput/reader_menus.h" />
     <ClInclude Include="InputOutput/reader_value.h" />
     <ClInclude Include="shift_processing.h" />
+    <ClInclude Include="Authorization/USB_data_struct.h" />
     <ClInclude Include="VeryImportantFuncs/console_handler.h" />
     <ClInclude Include="Structures/action_struct.h" />
     <ClInclude Include="Structures/byte_union.h" />
@@ -89,11 +94,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions.cpp" />
+    <ClCompile Include="Authorization/auth.cpp" />
+    <ClCompile Include="Authorization/auth_reader.cpp" />
+    <ClCompile Include="Authorization/get_all_drives.cpp" />
     <ClCompile Include="InputOutput/drawer_bits.cpp" />
     <ClCompile Include="InputOutput/drawer_graphic.cpp" />
     <ClCompile Include="InputOutput/reader_bits.cpp" />
     <ClCompile Include="InputOutput/reader_menus.cpp" />
     <ClCompile Include="InputOutput/reader_value.cpp" />
+    <ClCompile Include="Authorization/USB_data_struct.cpp" />
     <ClCompile Include="VeryImportantFuncs/console_handler.cpp" />
     <ClCompile Include="Structures/action_struct.cpp" />
     <ClCompile Include="Structures/color_struct.cpp" />

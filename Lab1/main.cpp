@@ -4,6 +4,17 @@ using namespace std;
 
 int main()
 {
+	setlocale(LC_ALL, "Russian");
+
+	if (!authorization())
+	{
+		system("pause");
+		return -1;
+	}
+
+	system("pause");
+	system("cls");
+
  	init_dtf();
 	init_colors();
 	init_main_menu();
