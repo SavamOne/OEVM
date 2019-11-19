@@ -3,6 +3,7 @@
 container<color> cs;
 container<data_type> dtf;
 container<main_menu> menu;
+container<auth_method> auth_methods;
 
 color* text_color, *bit1_color, *bit2_color, *bg_color, *graphic_color;
 
@@ -57,4 +58,10 @@ void init_main_menu()
 	menu.append(main_menu("Choose bit second color", choose_bit2_color));
 	menu.append(main_menu("Choose graphic color", choose_graphic_color));
 	menu.append(main_menu("Change authorization method", change_authorization_method));
+}
+
+void init_auth_methods()
+{
+	auth_methods.append(auth_method("Без защиты", without_auth));
+	auth_methods.append(auth_method("USB-накопитель + пароль", usb_flash_auth));
 }

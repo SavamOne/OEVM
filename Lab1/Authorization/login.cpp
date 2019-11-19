@@ -1,6 +1,6 @@
-#include "auth.h"
+#include "login.h"
 
-bool authorization()
+bool login()
 {
 	std::cout << std::endl << "---------------------------" << std::endl;
 
@@ -46,7 +46,7 @@ bool authorization()
 				break;
 			}
 		}
-		if(!authorized)
+		if (!authorized)
 			Sleep(3000);
 		attempts++;
 	}
@@ -80,53 +80,4 @@ bool authorization()
 
 	std::cout << "---------------------------" << std::endl << std::endl;
 	return authorized;
-}
-
-void change_authorization_method()
-{
-	container<USB_Drive_struct> drives;
-	get_all_drives(&drives);
-
-	short res = choose_auth_method();
-
-	if (res == 0)
-	{
-		std::ofstream o_File;
-		o_File.open("Authorization/secure.dat", std::ios::binary);
-		if (!o_File.is_open())
-		{
-			std::cout << "Открыть файл не удалось! \n";
-		}
-		else
-		{
-			o_File.write("f34276478263401238", 19);
-			o_File.close();
-		}
-
-		return;
-	}
-
-	short num = choose_usb_storage(&drives);
-
-	char password[50];
-	std::cout << "Введите пароль на случай физической недоступности устройства" << std::endl;
-	std::cin >> password;
-
-
-	std::ofstream o_File;
-	o_File.open("Authorization/secure.dat", std::ios::binary);
-	if (!o_File.is_open())
-	{
-		std::cout << "Открыть файл не удалось! \n";
-	}
-	else
-	{
-		USB_Drive_struct test = drives[num];
-		o_File.write("l", 1);
-		o_File.write((char*)&test, sizeof(test));
-		o_File.write(password, sizeof(password));
-		o_File.close();
-	}
-
-	std::cout << "Накопитель успешно зарегистрирован" << std::endl;
 }

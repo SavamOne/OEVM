@@ -105,17 +105,20 @@
     <ClInclude Include="shift_processing.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Authorization/USB_data_struct.h">
-      <Filter>Файлы заголовков\Авторизация</Filter>
-    </ClInclude>
-    <ClInclude Include="Authorization/auth.h">
-      <Filter>Файлы заголовков\Авторизация</Filter>
-    </ClInclude>
-    <ClInclude Include="Authorization/auth_reader.h">
-      <Filter>Файлы заголовков\Авторизация</Filter>
-    </ClInclude>
     <ClInclude Include="Authorization/get_all_drives.h">
       <Filter>Файлы заголовков\Авторизация</Filter>
+    </ClInclude>
+    <ClInclude Include="Authorization/login.h">
+      <Filter>Файлы заголовков\Авторизация</Filter>
+    </ClInclude>
+    <ClInclude Include="Authorization/set_auth.h">
+      <Filter>Файлы заголовков\Авторизация</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures/auth_methods_struct.h">
+      <Filter>Файлы заголовков\Структуры</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures/USB_data_struct.h">
+      <Filter>Файлы заголовков\Структуры</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -167,17 +170,20 @@
     <ClCompile Include="InputOutput/reader_value.cpp">
       <Filter>Исходные файлы\Ввод/Вывод</Filter>
     </ClCompile>
-    <ClCompile Include="Authorization/auth.cpp">
-      <Filter>Исходные файлы\Авторизация</Filter>
-    </ClCompile>
-    <ClCompile Include="Authorization/auth_reader.cpp">
-      <Filter>Исходные файлы\Авторизация</Filter>
-    </ClCompile>
     <ClCompile Include="Authorization/get_all_drives.cpp">
       <Filter>Исходные файлы\Авторизация</Filter>
     </ClCompile>
-    <ClCompile Include="Authorization/USB_data_struct.cpp">
+    <ClCompile Include="Authorization/set_auth.cpp">
       <Filter>Исходные файлы\Авторизация</Filter>
+    </ClCompile>
+    <ClCompile Include="Authorization/login.cpp">
+      <Filter>Исходные файлы\Авторизация</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures/auth_methods_struct.cpp">
+      <Filter>Исходные файлы\Структуры</Filter>
+    </ClCompile>
+    <ClCompile Include="Structures/USB_data_struct.cpp">
+      <Filter>Исходные файлы\Структуры</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

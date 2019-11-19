@@ -2,8 +2,12 @@
 
 void main_acitivity()
 {
-	short dt_index = readers::choose_data_type();
-	dtf[dt_index].processing();
+	dtf[readers::choose_data_type()].processing();
+}
+
+void change_authorization_method()
+{
+	auth_methods[readers::choose_auth_method()].change_func();
 }
 
 void choose_text_color()
@@ -34,7 +38,7 @@ void choose_bit2_color()
 {
 	color* c = readers::choose_color();
 	if (c)
-		bit2_color = c;
+		bit2_color = c;	
 }
 
 void choose_graphic_color()

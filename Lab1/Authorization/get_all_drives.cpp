@@ -3,7 +3,8 @@
 
 void get_all_drives(container<USB_Drive_struct>* drives)
 {
-	HDEVINFO hdev = SetupDiGetClassDevsA(NULL, NULL, NULL, DIGCF_ALLCLASSES | DIGCF_PRESENT);
+	drives->~container();
+	HDEVINFO hdev = SetupDiGetClassDevsA(nullptr, nullptr, nullptr, DIGCF_ALLCLASSES | DIGCF_PRESENT );
 	SP_DEVINFO_DATA DevInfoData;
 	DevInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
 	DWORD DeviceIndex = 0;
@@ -12,16 +13,17 @@ void get_all_drives(container<USB_Drive_struct>* drives)
 	{
 		char bufbyte[8];
 		memset(bufbyte, 0, sizeof(bufbyte));
-		SetupDiGetDeviceRegistryPropertyA(hdev, &DevInfoData, SPDRP_ENUMERATOR_NAME, NULL, (PBYTE)bufbyte, sizeof(bufbyte), NULL);
+		SetupDiGetDeviceRegistryPropertyA(hdev, &DevInfoData, SPDRP_ENUMERATOR_NAME, nullptr, reinterpret_cast<PBYTE>(bufbyte), sizeof(bufbyte), nullptr);
 
 		if (strcmp(bufbyte, "USBSTOR") == 0 || strcmp(bufbyte, "SCSI") == 0)
 		{
 			USB_Drive_struct drive;
 
-			SetupDiGetDeviceRegistryPropertyA(hdev, &DevInfoData, SPDRP_FRIENDLYNAME, NULL, (PBYTE)drive.name, sizeof(drive.name), NULL);
-			SetupDiGetDeviceInstanceIdA(hdev, &DevInfoData, (PSTR)drive.data, sizeof(drive.data), NULL);
+			SetupDiGetDeviceRegistryPropertyA(hdev, &DevInfoData, SPDRP_FRIENDLYNAME, nullptr, reinterpret_cast<PBYTE>(drive.name), sizeof(drive.name), nullptr);
+			SetupDiGetDeviceInstanceIdA(hdev, &DevInfoData, static_cast<PSTR>(drive.data), sizeof(drive.data), nullptr);
 
-			drives->append(drive);
+			if(strcmp(drive.name, "") != 0)
+				drives->append(drive);
 		}
 
 		DeviceIndex++;

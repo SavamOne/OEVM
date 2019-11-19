@@ -102,3 +102,62 @@ color* readers::choose_color()
 	delete clrs_n;
 	return ret;
 }
+
+short readers::choose_auth_method()
+{
+	short index = 0;
+	char move;
+	drawers::draw_auth_methods(index);
+	do
+	{
+		move = _getch();
+
+		if (move == 80)
+		{
+			index = ++index % auth_methods.size;
+			drawers::draw_auth_methods(index);
+		}
+		else if (move == 72)
+		{
+			index = (index > 0 ? --index : auth_methods.size - 1);
+			drawers::draw_auth_methods(index);
+		}
+
+	} while (move != 13);
+	system("cls");
+
+	cout << "You choosed: " << auth_methods[index].method_name_name << endl;
+
+	return index;
+}
+
+short readers::choose_usb_storage(container<USB_Drive_struct>* drives)
+{
+	short index = 0;
+	char move;
+	drawers::draw_usb_storages(index, drives);
+	do
+	{
+		move = _getch();
+
+		if (move == 80)
+		{
+			index = ++index % drives->size;
+			drawers::draw_usb_storages(index, drives);
+			get_all_drives(drives);
+		}
+		else if (move == 72)
+		{
+			index = (index > 0 ? --index : drives->size - 1);
+			drawers::draw_usb_storages(index, drives);
+			get_all_drives(drives);
+		}
+
+	} while (move != 13);
+	system("cls");
+
+	cout << "You choosed: " << (*drives)[index] << endl;
+
+	return index;
+
+}

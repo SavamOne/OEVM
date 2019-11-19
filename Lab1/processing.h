@@ -32,9 +32,8 @@ void processing_number()
 
 	if (a != 0)
 	{
-		char res;
 		cout << "--------" << endl << "Press Enter to continue or ESC to finish" << endl;
-		res = _getch();
+		char res = _getch();
 		while (res != 13 && res != 27) { res = _getch(); };
 
 		if (res == 13)

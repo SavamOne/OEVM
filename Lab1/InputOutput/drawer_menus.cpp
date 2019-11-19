@@ -27,3 +27,22 @@ void drawers::draw_choose_color(short index, container<color*>* clrs)
 		cout << (i == index ? "-> " : "   ") << (*clrs)[i]->color_name << endl;
 	}
 }
+
+void drawers::draw_auth_methods(short index)
+{
+	system("cls");
+
+	cout << "Please, choose unlock method, which you want to use:" << endl;
+	for (int i = 0; i < 2; i++)
+		cout << (i == index ? "-> " : "   ") << auth_methods[i].method_name_name << endl;
+}
+
+
+
+void drawers::draw_usb_storages(short index, container<USB_Drive_struct>* drives)
+{
+	system("cls");
+	cout << "Please, choose USB-drive, which you want to use:" << endl;
+	for (int i = 0; i < drives->size; i++)
+		cout << (i == index ? "-> " : "   ") << (*drives)[i] << endl;
+}

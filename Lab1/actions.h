@@ -10,3 +10,4 @@ void choose_bg_color();
 void choose_bit1_color();
 void choose_bit2_color();
 void choose_graphic_color();
+void change_authorization_method();

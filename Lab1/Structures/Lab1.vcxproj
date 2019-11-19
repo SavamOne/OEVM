@@ -67,17 +67,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="actions.h" />
+    <ClInclude Include="Authorization/auth.h" />
+    <ClInclude Include="Authorization/auth_reader.h" />
     <ClInclude Include="Authorization/get_all_drives.h" />
-    <ClInclude Include="Structures/auth_methods_struct.h" />
+    <ClInclude Include="auth_methods_struct.h" />
     <ClInclude Include="InputOutput/drawer_bits.h" />
     <ClInclude Include="InputOutput/drawer_graphic.h" />
     <ClInclude Include="InputOutput/reader_bits.h" />
     <ClInclude Include="InputOutput/reader_menus.h" />
     <ClInclude Include="InputOutput/reader_value.h" />
-    <ClInclude Include="Authorization/login.h" />
-    <ClInclude Include="Authorization/set_auth.h" />
+    <ClInclude Include="login.h" />
+    <ClInclude Include="set_auth.h" />
     <ClInclude Include="shift_processing.h" />
-    <ClInclude Include="Structures/USB_data_struct.h" />
+    <ClInclude Include="Authorization/USB_data_struct.h" />
     <ClInclude Include="VeryImportantFuncs/console_handler.h" />
     <ClInclude Include="Structures/action_struct.h" />
     <ClInclude Include="Structures/byte_union.h" />
@@ -95,16 +97,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actions.cpp" />
+    <ClCompile Include="Authorization/auth.cpp" />
+    <ClCompile Include="Authorization/auth_reader.cpp" />
     <ClCompile Include="Authorization/get_all_drives.cpp" />
-    <ClCompile Include="Structures/auth_methods_struct.cpp" />
+    <ClCompile Include="auth_methods_struct.cpp" />
     <ClCompile Include="InputOutput/drawer_bits.cpp" />
     <ClCompile Include="InputOutput/drawer_graphic.cpp" />
     <ClCompile Include="InputOutput/reader_bits.cpp" />
     <ClCompile Include="InputOutput/reader_menus.cpp" />
     <ClCompile Include="InputOutput/reader_value.cpp" />
-    <ClCompile Include="Structures/USB_data_struct.cpp" />
-    <ClCompile Include="Authorization/login.cpp" />
-    <ClCompile Include="Authorization/set_auth.cpp" />
+    <ClCompile Include="Authorization/USB_data_struct.cpp" />
+    <ClCompile Include="login.cpp" />
+    <ClCompile Include="set_auth.cpp" />
     <ClCompile Include="VeryImportantFuncs/console_handler.cpp" />
     <ClCompile Include="Structures/action_struct.cpp" />
     <ClCompile Include="Structures/color_struct.cpp" />
