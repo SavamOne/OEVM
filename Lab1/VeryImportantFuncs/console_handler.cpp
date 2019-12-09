@@ -42,7 +42,9 @@ void console_handler::clear_console()
 	GetConsoleScreenBufferInfo(handle, &csbi);
 	cellCount = csbi.dwSize.X * csbi.dwSize.Y;
 
-	FillConsoleOutputCharacter(handle, (TCHAR)' ', cellCount, startCoord, &count);
+	FillConsoleOutputCharacterA(handle, (TCHAR)' ', cellCount, startCoord, &count);
+	FillConsoleOutputAttribute(handle, 0, cellCount, startCoord, &count);
+
 	SetConsoleCursorPosition(handle, startCoord);
 }
 
