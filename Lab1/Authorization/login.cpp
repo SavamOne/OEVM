@@ -11,7 +11,7 @@ bool login()
 	i_File.open("Authorization/secure.dat", std::ios::binary);
 	if (!i_File.is_open())
 	{
-		std::cout << "Ошибка авторизации!\n";
+		std::cout << "Login error!\n";
 		std::cout << "---------------------------" << std::endl << std::endl;
 		return false;
 	}
@@ -20,7 +20,7 @@ bool login()
 	i_File.read(&state, 1);
 	if (state == 'f')
 	{
-		std::cout << "Авторизация не требуется" << std::endl;
+		std::cout << "No authorization required" << std::endl;
 		std::cout << "---------------------------" << std::endl << std::endl;
 		return true;
 	}
@@ -30,7 +30,7 @@ bool login()
 	i_File.close();
 
 
-	std::cout << "Пожалуйста, вставьте необходимый накопитель" << std::endl;
+	std::cout << "Please insert the required drive" << std::endl;
 	bool authorized = false;
 	short attempts = 0;
 	while (!authorized && attempts <= 5)
@@ -55,7 +55,7 @@ bool login()
 
 	if (!authorized)
 	{
-		std::cout << "Время авторизации по накопителю истекло. Введите пароль" << std::endl;
+		std::cout << "Drive authorization timed out. Enter password" << std::endl;
 		while (attempts < 5)
 		{
 			char p[50];
@@ -67,16 +67,16 @@ bool login()
 			}
 			else
 			{
-				std::cout << "Пароль неверный. Попробуйте еще раз" << std::endl;
+				std::cout << "Wrong password. Try again" << std::endl;
 				attempts++;
 			}
 		}
 	}
 
 	if (authorized)
-		std::cout << "Успешно авторизовано" << std::endl;
+		std::cout << "Successfully Logged In" << std::endl;
 	else
-		std::cout << "Авторизоваться не получилось" << std::endl;
+		std::cout << "Login failed" << std::endl;
 
 	std::cout << "---------------------------" << std::endl << std::endl;
 	return authorized;

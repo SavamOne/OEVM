@@ -30,5 +30,8 @@ namespace console_handler
 
 	void set_text_color(color* color);
 	void set_bg_color(color* color);	
+
+	void clear_console_buffer();
+	void clear_console();
 }
 

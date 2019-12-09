@@ -62,6 +62,6 @@ void init_main_menu()
 
 void init_auth_methods()
 {
-	auth_methods.append(auth_method("Без защиты", without_auth));
-	auth_methods.append(auth_method("USB-накопитель + пароль", usb_flash_auth));
+	auth_methods.append(auth_method("Without authorization", without_auth));
+	auth_methods.append(auth_method("USB-flash + password", usb_flash_auth));
 }

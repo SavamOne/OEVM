@@ -23,8 +23,27 @@ void console_handler::clear_pen()
 {
 	ReleaseDC(hWnd, hDC);
 	DeleteObject(Pen);
-	//RECT rect;
-    //Rectangle(hDC,rect.left,rect.top,rect.right,rect.bottom);
+}
+
+void console_handler::clear_console_buffer()
+{
+	FlushConsoleInputBuffer(GetStdHandle(STD_INPUT_HANDLE));
+}
+
+void console_handler::clear_console()
+{
+	update_handle();
+
+	CONSOLE_SCREEN_BUFFER_INFO csbi;
+	DWORD count;
+	DWORD cellCount;
+	COORD startCoord = { 0, 0 };
+
+	GetConsoleScreenBufferInfo(handle, &csbi);
+	cellCount = csbi.dwSize.X * csbi.dwSize.Y;
+
+	FillConsoleOutputCharacter(handle, (TCHAR)' ', cellCount, startCoord, &count);
+	SetConsoleCursorPosition(handle, startCoord);
 }
 
 void console_handler::set_pen_in(int x, int y)

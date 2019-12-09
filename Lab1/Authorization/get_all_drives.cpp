@@ -7,7 +7,7 @@ void get_all_drives(container<USB_Drive_struct>* drives)
 	HDEVINFO hdev = SetupDiGetClassDevsA(nullptr, nullptr, nullptr, DIGCF_ALLCLASSES | DIGCF_PRESENT );
 	SP_DEVINFO_DATA DevInfoData;
 	DevInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
-	DWORD DeviceIndex = 0;
+	int DeviceIndex = 0;
 
 	while (SetupDiEnumDeviceInfo(hdev, DeviceIndex, &DevInfoData))
 	{
@@ -27,8 +27,8 @@ void get_all_drives(container<USB_Drive_struct>* drives)
 		}
 
 		DeviceIndex++;
-		memset(&DevInfoData, 0,
-			sizeof(SP_DEVINFO_DATA));
+
+		memset(&DevInfoData, 0, sizeof(SP_DEVINFO_DATA));
 		DevInfoData.cbSize = sizeof(SP_DEVINFO_DATA);
 	}
 	SetupDiDeleteDeviceInfo(hdev, &DevInfoData);

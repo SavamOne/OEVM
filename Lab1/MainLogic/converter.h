@@ -10,8 +10,6 @@ using namespace std;
 
 namespace main_processes
 {
-	namespace
-	{
 		template <class T>
 		T pow(T num, int ns)
 		{
@@ -57,7 +55,6 @@ namespace main_processes
 			}
 			return res;
 		}
-	}
 
 	template <class T>
 	T convert2decimal(const string& num, const unsigned short& ns, bool &exceed_max_value)

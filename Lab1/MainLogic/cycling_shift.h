@@ -8,11 +8,21 @@ namespace main_processes
 	template <class T>
 	T cyclic_shift(bool* bits, short start, short end, short step)
 	{
-		if (step > 0)
+		__asm
 		{
+			mov ax, step
+			test ax, ax
+			jle step_is_lower_than_zero
+		}
+		//if (step > 0)
+		//{
 			my_reverse(bits, start, start + step - 1);
 			my_reverse(bits, start + step, end);
 			my_reverse(bits, start, end);
+		//}
+		__asm
+		{
+			step_is_lower_than_zero:
 		}
 
 		bytes<T> st;
